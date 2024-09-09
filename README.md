@@ -1,5 +1,4 @@
 # EcoFungi
-![secundaria-png](uploads/ded61dc5b839e6e64e339f44c70d788d/secundaria-png.png){width=100 height=100}
 
 ## MVP- proposta a ser desenvolvida:
 Nossa proposta como produto é facilitar a conexão, compra e venda de produtos fúngicos como cogumelos frescos e secos, mentorias, substratos e mais através de um e-commerce que possibilite a comercialização descomplicada. Portanto, nosso mínimo produto viável(MVP) será o fluxo completo de venda.
