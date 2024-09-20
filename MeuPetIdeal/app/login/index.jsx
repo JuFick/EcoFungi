@@ -34,7 +34,7 @@ export default function Login() {
     try {
       console.log("Iniciando OAuth flow");
       const { createdSessionId, signIn, signUp, setActive } = await startOAuthFlow({
-        redirectUrl: Linking.createURL('/home', { scheme: 'myapp' }),  // Verifique se o esquema e URL estão corretos
+        redirectUrl: Linking.createURL('/(tabs)/home', { scheme: 'myapp' }),  // Verifique se o esquema e URL estão corretos
       });
 
       console.log("OAuth flow concluído");
@@ -76,7 +76,7 @@ export default function Login() {
           style={{
             padding: 14,
             marginTop: 100,
-            backgroundColor: Colors.ROSINHA,
+            backgroundColor: Colors.AMARELINHO_ESCURO,
             width: '100%',
             borderRadius: 14,
           }}

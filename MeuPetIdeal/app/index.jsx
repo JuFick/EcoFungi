@@ -1,7 +1,10 @@
 import { Text, View } from "react-native";
-import { Link } from "expo-router";
+import { useUser } from "@clerk/clerk-expo";
+import { Link, Redirect } from "expo-router";
 
 export default function Index() {
+
+    const {user}=useUser();
     return (
         <View
             style={{
@@ -9,9 +12,11 @@ export default function Index() {
 
             }}
         >
-            <Link href={'/login'}>
-            <Text>Faça seu Login</Text>
-            </Link>
+        {/* condicional para usuário logado se não logado, redirecioa para tela login se logado direciona para home */}
+        {user?
+        <Redirect href={'/(tabs)/home'}/>
+        :<Redirect href={'/login'}/>
+        }
         </View>
     );
 }
