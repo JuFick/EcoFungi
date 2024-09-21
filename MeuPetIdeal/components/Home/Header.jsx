@@ -18,7 +18,7 @@ export default function Header() {
             fontSize: 18,
           }}
         >
-          Ben=m-vindo(a)!
+          Bem-vindo(a)!
         </Text>
         <Text
           style={{
