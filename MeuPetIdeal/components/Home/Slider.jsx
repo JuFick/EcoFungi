@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, Dimensions, StyleSheet } from "react-native"; // Adicionado StyleSheet
+import { View, Text, FlatList, Image, Dimensions, StyleSheet } from "react-native"; 
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./../../config/FirebaseConfig";
@@ -41,7 +41,7 @@ export default function Slider() {
 const styles = StyleSheet.create({
   sliderImage: {
     width: Dimensions.get('screen').width * 0.9,
-    height: 170,
+    height: 190,
     borderRadius: 15,
     marginRight: 15,
   },

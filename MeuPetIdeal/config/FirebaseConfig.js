@@ -20,6 +20,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// importa o nome do db, se for o default não é necessário
-export const db=getFirestore(app, 'default');
+// importa o nome do db depois de (app, 'nome_do_banco"), se for o default não é necessário
+export const db=getFirestore(app);
 // const analytics = getAnalytics(app);

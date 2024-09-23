@@ -4,6 +4,7 @@ import Colors from './../../constants/Colors';
 import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
 import { useOAuth } from '@clerk/clerk-expo';
+// import index from './../index';
 
 export const useWarmUpBrowser = () => {
   React.useEffect(() => {
