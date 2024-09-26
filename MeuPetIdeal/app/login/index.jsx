@@ -4,7 +4,7 @@ import Colors from './../../constants/Colors';
 import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
 import { useOAuth } from '@clerk/clerk-expo';
-// import index from './../index';
+
 
 export const useWarmUpBrowser = () => {
   React.useEffect(() => {
@@ -35,7 +35,7 @@ export default function Login() {
     try {
       console.log("Iniciando OAuth flow");
       const { createdSessionId, signIn, signUp, setActive } = await startOAuthFlow({
-        redirectUrl: Linking.createURL('/(tabs)/home', { scheme: 'myapp' }),  // Verifique se o esquema e URL estão corretos
+        redirectUrl: Linking.createURL('/(tabs)/home', { scheme: 'myapp' }),  
       });
 
       console.log("OAuth flow concluído");
