@@ -5,11 +5,11 @@ import { Redirect, useRootNavigationState } from 'expo-router';
 
 export default function Index() {
   const { user } = useUser();
-  const navigationState = useRootNavigationState(); // Não sobrescreva o hook diretamente
+  const navigationState = useRootNavigationState(); 
   
   useEffect(() => {
     CheckNavLoaded();
-  }, [navigationState]); // Adicione dependência de `navigationState`
+  }, [navigationState]); // Adiciona dependência de `navigationState`
 
   const CheckNavLoaded = () => {
     if (!navigationState?.key) {
@@ -17,18 +17,18 @@ export default function Index() {
     }
   };
 
-  // Verifique se o hook de navegação está carregado antes de renderizar
+  // Verifica se o hook de navegação está carregado antes de renderizar
   if (!navigationState?.key) {
     return null;
   }
 
   return (
     <View style={{ flex: 1 }}>
-      {/* Verifique se o usuário está logado e redirecione apropriadamente */}
+      {/* Verifica se o usuário está logado e redirecione apropriadamente */}
       {user ? (
         <Redirect href={'/(tabs)/home'} />
       ) : (
-        <Redirect href={'/login/index'} />
+        <Redirect href={'/login'} />
       )}
     </View>
   );

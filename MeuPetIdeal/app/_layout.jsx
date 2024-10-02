@@ -4,11 +4,11 @@ import { ClerkProvider } from "@clerk/clerk-expo";
 import * as SecureStore from "expo-secure-store";
 import { Platform } from "react-native";
 
-// TokenCache ajustado para funcionar em diferentes plataformas
+
 const tokenCache = {
   async getToken(key) {
     if (Platform.OS === "web") {
-      // Para o ambiente web, use localStorage
+  
       const item = localStorage.getItem(key);
       if (item) {
         console.log(`${key} was used 🔐 (web) \n`);
@@ -19,7 +19,7 @@ const tokenCache = {
     }
     
     try {
-      // Para dispositivos móveis, use SecureStore
+      
       const item = await SecureStore.getItemAsync(key);
       if (item) {
         console.log(`${key} was used 🔐 \n`);
@@ -35,14 +35,14 @@ const tokenCache = {
   },
   async saveToken(key, value) {
     if (Platform.OS === "web") {
-      // Para o ambiente web, use localStorage
+  
       localStorage.setItem(key, value);
       console.log(`${key} stored in localStorage (web)`);
       return;
     }
     
     try {
-      // Para dispositivos móveis, use SecureStore
+      
       await SecureStore.setItemAsync(key, value);
       console.log(`${key} stored in SecureStore`);
     } catch (err) {
@@ -51,11 +51,11 @@ const tokenCache = {
   },
   async clearToken(key) {
     if (Platform.OS === "web") {
-      // Para o ambiente web, use localStorage
+  
       localStorage.removeItem(key);
       console.log(`${key} removed from localStorage (web)`);
     } else {
-      // Para dispositivos móveis, use SecureStore
+      
       await SecureStore.deleteItemAsync(key);
       console.log(`${key} removed from SecureStore`);
     }
@@ -63,7 +63,7 @@ const tokenCache = {
 };
 
 export default function RootLayout() {
-  // Carregando a chave Clerk de variáveis de ambiente
+
   const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
   if (!publishableKey) {
     throw new Error(
@@ -71,7 +71,6 @@ export default function RootLayout() {
     );
   }
 
-  // Carregamento de fontes personalizadas
   const [fontsLoaded] = useFonts({
     outfit: require("./../assets/fonts/Lora-Regular.ttf"),
     "outfit-medium": require("./../assets/fonts/Lora-Medium.ttf"),
